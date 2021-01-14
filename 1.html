@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 600px;
+            height: 500px;
+            border-left: 2px solid red;
+            border-bottom: 2px solid red;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            margin: 60px;
+        }
+
+        #box .line {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        <input type="color" id='color' />
+        <input type="text" id='text' />
+        <button type="button" onclick="add()">
+            添加
+        </button>
+        <button type="button" onclick="rotate()">
+            旋转
+        </button>
+    </div>
+    <div id="box">
+
+    </div>
+</div>
+</body>
+<script>
+    let array = [];
+
+    const box = document.getElementById('box');
+
+    function draw(){
+        box.innerHTML=''
+        array.forEach(item => {
+            box.innerHTML += `
+        <div class = 'line' style='background-color: ${item.color}; height: ${item.value*5}px;'> </div>
+      `
+        })
+    }
+
+
+    function add(){
+        const color = document.getElementById('color').value;
+        const text = document.getElementById('text').value;
+        if(color && text && (text <100 && text>0)){
+            console.log(color,text)
+            array.push({color:color,value:text})
+            array.sort((a,b)=>b.value-a.value);
+            draw()
+        }
+    }
+
+    let angle=90;
+    function rotate(){
+        angle +=90;
+        box.style.transform = `rotate(${angle}deg)`;
+    }
+</script>
+</html>

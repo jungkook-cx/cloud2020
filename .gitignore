@@ -1,0 +1,4 @@
+# Project exclude paths
+/cloud-consumer-feign-hystrix-order80/target/
+/cloud-consumer-feign-order80/target/
+/cloud-progitvider-hystrix-payment8001/target/
