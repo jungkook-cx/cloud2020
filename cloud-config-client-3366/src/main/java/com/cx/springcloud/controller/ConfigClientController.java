@@ -8,16 +8,19 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @description:
  * @author: ChenXi
- * @time: 2021/1/14 17:02
+ * @time: 2021/1/15 16:02
  */
 @RestController
 @RefreshScope
 public class ConfigClientController {
+    @Value("${server.port}")
+    private String serverPort;
+
     @Value("${config.info}")
     private String configInfo;
 
     @GetMapping("/configInfo")
     public String getConfigInfo(){
-        return configInfo;
+        return "serverPort:  "+serverPort+"\t\n\n configInfo"+configInfo;
     }
 }

@@ -1,15 +1,15 @@
 server:
-  port: 3355
+  port: 3366
 
 spring:
   application:
     name: config-client
   cloud:
     config: #Config客户端配置
-       label: master   #分支名称
-       name: config   #配置文件名称
-       profile: dev   #读取后缀名称
-       uri: http://localhost:3344  #配置中心地址
+      label: master   #分支名称
+      name: config   #配置文件名称
+      profile: dev   #读取后缀名称
+      uri: http://localhost:3344  #配置中心地址
 
 #rabbitmq相关配置
 rabbitmq:
@@ -17,9 +17,6 @@ rabbitmq:
     port: 5672
     username: guest
     password: guest
-
-
-
 
 eureka:
   client:
