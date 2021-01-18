@@ -13,11 +13,10 @@
 
     <dependencies>
         <!-- 包含了sleuth zipkin 数据链路追踪-->
-        <!--<dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zipkin</artifactId>
         </dependency>
-        -->
         <dependency>
             <groupId>com.cx.springcloud</groupId>
             <artifactId>cloud-api-commons</artifactId>
